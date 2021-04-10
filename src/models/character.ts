@@ -1,14 +1,14 @@
 export class Character {
   constructor(
-    id: number,
-    name: string,
-    status: string,
-    species: string,
-    type: string,
-    gender: string,
-    origin: string,
-    location: string,
-    image: string,
-    created: string
+    public id: number,
+    public name: string,
+    public status: string,
+    public species: string,
+    public type: string,
+    public gender: string,
+    public origin: string,
+    public location: string,
+    public image: string,
+    public created: string
   ) {}
 }

@@ -1,12 +1,14 @@
 <template>
   <div class="cards">
-    <button @click="sortByName()">Sort By Name</button>
+    <div class="btn-container">
+      <button class="btn" @click="sortByName()">Sort By Name</button>
+    </div>
     <div class="row">
       <div v-for="character in mainCharacters" :key="character.id">
         <div class="col-sm-3">
           <router-link :to="`/characters/${character.id}`">
-            <div class="card" style="width: 18rem">
-              <img :class="character.status" :src="character.image" alt=".." />
+            <div class="card" :class="character.status">
+              <img :src="character.image" alt=".." />
               <div class="card-body">
                 <h5 class="card-title">{{ character.name }}</h5>
                 <p>{{ character.status }} | {{ character.species }}</p>
@@ -65,24 +67,24 @@ export default {
 
 <style scoped>
 .cards {
-  margin-top: 10%;
   width: 100%;
-
+  margin-top: 15%;
   overflow: hidden;
 }
-
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7%;
+  margin-bottom: 2%;
+}
+.btn {
+  color: white;
+  background-color: #1f8b4f;
+}
 .row {
   justify-content: center;
   margin-right: 0;
   margin-left: 0;
-}
-
-.character.status Alive {
-  border-block-end-color: green 1px solid;
-}
-
-.card Dead {
-  border: 1px solid red;
 }
 
 .col-sm-3 {
@@ -92,11 +94,20 @@ export default {
 }
 
 .card {
+  width: 18rem;
   border-radius: 2%;
-  color: black !important;
+  color: white;
+  background-color: #333333;
 }
 .card:hover {
   text-decoration: none !important;
+}
+.Alive {
+  border: green 5px solid;
+}
+
+.Dead {
+  border: 5px solid red;
 }
 
 img {
@@ -116,11 +127,22 @@ img {
   margin-right: 2%;
 }
 
-a {
-  color: black !important;
-}
-
 a:hover {
   text-decoration: none !important;
+}
+
+/* 668px */
+@media (max-width: 43em) {
+  .card {
+    width: 15rem;
+  }
+
+  .btn-container {
+    margin-right: 17%;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 0.1rem 0.3rem;
+  }
 }
 </style>

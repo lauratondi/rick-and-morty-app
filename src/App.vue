@@ -18,6 +18,16 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+:root {
+  --primary-color: #39a2a0;
+  --light-green: #80c352;
+  --dark-green: #1f8b4f;
+  --dark-color: #333333;
+  --black-color: #191c1f;
+  --grey-color: #222b31;
+  --light-color: #e9ecef;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,5 +44,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #222b31;
 }
 </style>

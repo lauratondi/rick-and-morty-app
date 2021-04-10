@@ -1,14 +1,14 @@
 <template>
   <div class="card text-center">
     <div class="card-header">
-      {{ character.name }}
+      {{ name }}
     </div>
     <div class="card-body">
-      <img :class="character.status" :src="character.image" alt=".." />
+      <img :class="status" :src="image" alt=".." />
       <p class="card-text"></p>
     </div>
-    <div class="card-footer text-muted">
-      {{ character.type }}
+    <div class="card-footer">
+      {{ type }}
     </div>
   </div>
 </template>
@@ -16,13 +16,16 @@
 <script lang="ts">
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-// import { Character } from '@/models/character';
+import { Character } from '@/models/character';
 
 export default {
   name: 'Character',
 
   setup() {
-    const character = ref();
+    const character = ref({});
+    const name = ref('');
+    const type = ref('');
+
     const route = useRoute();
     onMounted(async () => {
       const res = await fetch(
@@ -36,8 +39,16 @@ export default {
     });
 
     return {
-      character,
+      character: {},
+      name: '',
+      type: '',
     };
   },
 };
 </script>
+
+<style scoped>
+.card {
+  margin-top: 15%;
+}
+</style>

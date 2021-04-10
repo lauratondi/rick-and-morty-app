@@ -4,8 +4,8 @@
       <div v-for="character in characters" :key="character.id">
         <div class="col-sm-3">
           <router-link :to="`/characters/${character.id}`">
-            <div class="card" style="width: 18rem">
-              <img :class="character.status" :src="character.image" alt=".." />
+            <div class="card" :class="character.status">
+              <img :src="character.image" alt=".." />
               <div class="card-body">
                 <h5 class="card-title">{{ character.name }}</h5>
                 <p>{{ character.status }} | {{ character.species }}</p>
@@ -36,10 +36,11 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, defineComponent } from 'vue';
 import { Character } from '@/models/character';
+import axios from 'axios';
 
-export default {
+export default defineComponent({
   name: 'Characters',
 
   setup() {
@@ -56,7 +57,14 @@ export default {
 
       console.log(characters.value);
     };
+    // const load () {
+    //   const data = axios.get(
+    //     `https://rickandmortyapi.com/api/character/?page=${page.value}`
+    //   );
+    //   characters.value = data.results;
 
+    //   console.log(characters.value);
+    // };
     onMounted(load);
 
     const next = async () => {
@@ -75,14 +83,13 @@ export default {
       prev,
     };
   },
-};
+});
 </script>
 
 <style scoped>
 .cards {
-  margin-top: 10%;
+  margin-top: 15%;
   width: 100%;
-
   overflow: hidden;
 }
 
@@ -92,14 +99,6 @@ export default {
   margin-left: 0;
 }
 
-.character.status Alive {
-  border-block-end-color: green 1px solid;
-}
-
-.card Dead {
-  border: 1px solid red;
-}
-
 .col-sm-3 {
   /* display: flex;
   justify-content: center; */
@@ -107,11 +106,21 @@ export default {
 }
 
 .card {
+  width: 18rem;
   border-radius: 2%;
-  color: black !important;
+  color: white;
+  background-color: #333333;
 }
 .card:hover {
   text-decoration: none !important;
+}
+
+.Alive {
+  border: green 5px solid;
+}
+
+.Dead {
+  border: 5px solid red;
 }
 
 img {
@@ -137,5 +146,17 @@ a {
 
 a:hover {
   text-decoration: none !important;
+}
+
+.page-link {
+  color: white !important;
+  background-color: #1f8b4f !important;
+  border: #222b31 1px solid;
+}
+/* 668px */
+@media (max-width: 43em) {
+  .card {
+    width: 15rem;
+  }
 }
 </style>
