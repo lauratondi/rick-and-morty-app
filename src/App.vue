@@ -35,8 +35,7 @@ export default {
 }
 body {
   font-family: 'Poppins', sans-serif;
-  width: 100vw;
-  height: 100vh;
+  overflow-x: hidden;
 }
 
 #container {
@@ -45,5 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #222b31;
+  width: 100vw;
+  height: 100%;
 }
 </style>

@@ -29,6 +29,11 @@
             >
           </li>
           <li class="nav-item">
+            <router-link class="nav-link" to="/locations"
+              >Locations</router-link
+            >
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link" to="/random">Random</router-link>
           </li>
         </ul>
@@ -58,6 +63,7 @@ nav {
 }
 img {
   width: 50%;
+  border-radius: 50%;
 }
 .navbar-toggler {
   font-size: 1rem;

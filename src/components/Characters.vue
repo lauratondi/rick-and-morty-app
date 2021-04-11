@@ -42,6 +42,9 @@ import axios from 'axios';
 
 export default defineComponent({
   name: 'Characters',
+  props: {
+    character: Object,
+  },
 
   setup() {
     const characters = ref([]);

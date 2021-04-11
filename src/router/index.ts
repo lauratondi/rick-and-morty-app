@@ -2,6 +2,8 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '@/components/Home.vue';
 import Characters from '@/components/Characters.vue';
 import Character from '@/components/Character.vue';
+import Locations from '@/components/Locations.vue';
+import Location from '@/components/Location.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -20,6 +22,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/characters/:id',
     name: 'Character',
     component: Character,
+  },
+  {
+    path: '/locations',
+    name: 'Locations',
+    component: Locations,
+  },
+  {
+    path: '/locations/:id',
+    name: 'Location',
+    component: Location,
   },
   // {
   //   path: '/random',

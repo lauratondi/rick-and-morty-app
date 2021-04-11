@@ -9,6 +9,7 @@ export class Character {
     public origin: string,
     public location: string,
     public image: string,
-    public created: string
+    public created: string,
+    public episode: Array<any>
   ) {}
 }

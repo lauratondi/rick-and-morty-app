@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
     <div class="btn-container">
-      <button class="btn" @click="sortByName()">Sort By Name</button>
+      <button class="btn" @click="sortByCreated()">Sort By Name</button>
     </div>
     <div class="row">
       <div v-for="character in mainCharacters" :key="character.id">
@@ -44,7 +44,7 @@ export default {
       // console.log(data);
       // mainCharacters.value = data;
       const res = await fetch(
-        'https://rickandmortyapi.com/api/character/1,2,3,4,5,7,11,183,14,20'
+        'https://rickandmortyapi.com/api/character/5,7,11,183,14,20,1,2,3,4,'
       );
 
       const data = await res.json();
@@ -57,9 +57,17 @@ export default {
         a.name.localeCompare(b.name)
       );
     };
+
+    const sortByCreated = async () => {
+      mainCharacters.value.sort((a: any, b: any) => {
+        return b.created.localeCompare(a.created);
+      });
+    };
+
     return {
       mainCharacters,
       sortByName,
+      sortByCreated,
     };
   },
 };

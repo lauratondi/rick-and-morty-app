@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-center">
+  <div class="card text-center" v-if="character !== null">
     <div class="card-header">
       {{ name }}
     </div>
@@ -14,17 +14,21 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { Character } from '@/models/character';
 
-export default {
+export default defineComponent({
   name: 'Character',
+  props: {
+    name: String,
+    type: String,
+    image: String,
+    status: String,
+  },
 
   setup() {
     const character = ref({});
-    const name = ref('');
-    const type = ref('');
 
     const route = useRoute();
     onMounted(async () => {
@@ -39,12 +43,10 @@ export default {
     });
 
     return {
-      character: {},
-      name: '',
-      type: '',
+      character,
     };
   },
-};
+});
 </script>
 
 <style scoped>
