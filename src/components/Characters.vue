@@ -36,18 +36,21 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref, defineComponent } from 'vue';
-import { Character } from '@/models/character';
+import { onMounted, ref, defineComponent, PropType } from 'vue';
+import { Character } from '@/types';
 import axios from 'axios';
 
 export default defineComponent({
   name: 'Characters',
-  props: {
-    character: Object,
-  },
 
+  props: {
+    character: {
+      type: Object,
+      required: true,
+    },
+  },
   setup() {
-    const characters = ref([]);
+    const characters = ref([] as any);
     const page = ref(1);
 
     const load = async () => {

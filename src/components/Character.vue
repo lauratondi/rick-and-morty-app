@@ -16,15 +16,26 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { Character } from '@/models/character';
+import { Character } from '@/types';
 
 export default defineComponent({
   name: 'Character',
   props: {
-    name: String,
-    type: String,
-    image: String,
-    status: String,
+    name: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: String,
+    },
   },
 
   setup() {

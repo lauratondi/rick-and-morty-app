@@ -23,7 +23,7 @@
               <!-- <span class="sr-only">(current)</span> -->
             </router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/characters"
               >Characters</router-link
             >
@@ -32,6 +32,27 @@
             <router-link class="nav-link" to="/locations"
               >Locations</router-link
             >
+          </li> -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <router-link class="nav-link" to="/characters"
+                >Characters</router-link
+              >
+              <router-link class="nav-link" to="/locations"
+                >Locations</router-link
+              >
+            </div>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/random">Random</router-link>
@@ -73,5 +94,9 @@ img {
 }
 li {
   color: black;
+}
+
+.dropdown-menu {
+  background-color: #80c352;
 }
 </style>

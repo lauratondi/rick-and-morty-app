@@ -26,10 +26,41 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, PropType, defineComponent } from 'vue';
 
-export default {
+// import { Location } from '@/types';
+
+export default defineComponent({
   name: 'Locations',
+  // props: {
+  //   location: {
+  //     type: Object as PropType<Location>,
+  //     required: true,
+  //   },
+  // },
+
+  // data() {
+  //   return {
+  //     locations: [] as Location[],
+  //     location: {} as Location,
+  //   };
+  // },
+
+  // mounted: {
+  //   async getLocations() {
+  //     const locations = ref([]);
+  //     const res = await fetch(`https://rickandmortyapi.com/api/location`);
+
+  //     const data = await res.json();
+  //     locations.value = data.results;
+
+  //     console.log(locations.value);
+  //   },
+  // },
+
+  // async created() {
+  //   this.getLocations();
+  // },
 
   setup() {
     const locations = ref([]);
@@ -63,7 +94,7 @@ export default {
       prev,
     };
   },
-};
+});
 </script>
 
 <style scoped>

@@ -1,8 +1,24 @@
 <template>
   <div class="cards">
-    <div class="btn-container">
-      <button class="btn" @click="sortByCreated()">Sort By Name</button>
+    <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        id="dropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Sort By
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li class="dropdown-item" @click="sortByCreated()">Created</li>
+        <li class="dropdown-item" @click="sortByName()">Name</li>
+      </ul>
     </div>
+    <!-- / sorting dropdown -->
     <div class="row">
       <div v-for="character in mainCharacters" :key="character.id">
         <div class="col-sm-3">
@@ -34,7 +50,7 @@ export default {
   name: 'MainCharacters',
 
   setup() {
-    const mainCharacters = ref([]);
+    const mainCharacters = ref([] as any);
 
     onMounted(async () => {
       // const { data } = await axios.get(
@@ -79,16 +95,31 @@ export default {
   margin-top: 15%;
   overflow: hidden;
 }
-.btn-container {
+.dropdown {
   display: flex;
   justify-content: flex-end;
   margin-right: 7%;
   margin-bottom: 2%;
 }
-.btn {
-  color: white;
+.btn-secondary {
   background-color: #1f8b4f;
 }
+.btn-secondary.dropdown-toggle {
+  background-color: #1f8b4f;
+  border: #1f8b4f;
+}
+ul {
+  background-color: #1f8b4f;
+}
+li {
+  background-color: #1f8b4f;
+  color: white;
+}
+li:hover {
+  background-color: #1f8b4f;
+  cursor: pointer;
+}
+/* / sorting dropdown */
 .row {
   justify-content: center;
   margin-right: 0;
@@ -143,14 +174,6 @@ a:hover {
 @media (max-width: 43em) {
   .card {
     width: 15rem;
-  }
-
-  .btn-container {
-    margin-right: 17%;
-  }
-  .btn {
-    font-size: 12px;
-    padding: 0.1rem 0.3rem;
   }
 }
 </style>
