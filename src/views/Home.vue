@@ -14,7 +14,7 @@
       </a>
 
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <li class="dropdown-item" @click="sortByCreated()">Created</li>
+        <li class="dropdown-item" @click="sortByCreated()">Last Created</li>
         <li class="dropdown-item" @click="sortByName()">Name</li>
       </ul>
     </div>

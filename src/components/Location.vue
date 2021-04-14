@@ -3,46 +3,71 @@
     Locations
     <div>
       <h5>Location: {{ name }}</h5>
+      <ul>
+        <li v-for="resident in residents" :key="resident.id">
+          <Residents v-if="residents.length !== 0" :residents="residents" />
+        </li>
+      </ul>
+      <router-link to="/locations"
+        ><button class="btn">Back to Locations</button></router-link
+      >
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Residents from '@/components/Residents.vue';
+import Characters from '@/components/Characters.vue';
+import { Location as LocationType } from '@/types';
 
-export default {
+export default defineComponent({
   name: 'Location',
+
   props: {
-    name: String,
-    residents: String,
+    name: {
+      type: String,
+      required: true,
+    },
+    // residents: {
+    //   type: Array,
+    // },
+  },
+  components: {
+    Residents,
   },
 
   setup() {
-    const location = ref({});
-    const route = useRoute();
+    const residents = ref([] as any);
 
-    onMounted(async () => {
+    const route = useRoute();
+    const getResidents = async () => {
       const res = await fetch(
-        `https://rickandmortyapi.com/api/location/${route.params.id}`
+        `https://rickandmortyapi.com/api/character/${route.params.id}`
       );
 
       const data = await res.json();
-      location.value = data;
+      residents.value = data.results;
 
-      console.log(location.value);
-    });
+      console.log(residents.value);
+    };
 
+    onMounted(getResidents);
     return {
-      location,
+      residents,
     };
   },
-};
+});
 </script>
 
 <style scoped>
 .loc {
   margin-top: 15%;
   color: white;
+}
+
+.btn {
+  background-color: #1f8b4f;
 }
 </style>
