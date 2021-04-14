@@ -17,5 +17,10 @@ export interface Location {
   name: string;
   type: string;
   dimension: string;
-  resindets: Array<any>;
+  resindents: Array<any>;
+}
+
+export interface Resident {
+  id: number;
+  name: string;
 }

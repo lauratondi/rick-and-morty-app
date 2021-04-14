@@ -12,6 +12,9 @@
       </div>
       <div class="card-footer">{{ status }} | {{ species }}</div>
     </div>
+    <router-link to="/characters"
+      ><button class="btn">Back to Characters</button></router-link
+    >
   </div>
 </template>
 
@@ -55,6 +58,9 @@ export default defineComponent({
 .card-container {
   margin-top: 15%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .Alive {
   border: green 5px solid;
@@ -62,5 +68,9 @@ export default defineComponent({
 
 .Dead {
   border: 5px solid red;
+}
+.btn {
+  margin-top: 10%;
+  background-color: #1f8b4f;
 }
 </style>

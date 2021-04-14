@@ -38,20 +38,7 @@
 <script lang="ts">
 import { onMounted, ref, defineComponent, PropType } from 'vue';
 import { Character } from '@/types';
-import axios from 'axios';
 
-// interface Character {
-//   id: number;
-//   name: string;
-//   status: string;
-//   species: string;
-//   type: string;
-//   gender: string;
-//   origin: string;
-//   location: string;
-//   image: string;
-//   created: string;
-// }
 export default defineComponent({
   name: 'Characters',
 
@@ -82,14 +69,7 @@ export default defineComponent({
 
       console.log(characters.value);
     };
-    // const load () {
-    //   const data = axios.get(
-    //     `https://rickandmortyapi.com/api/character/?page=${page.value}`
-    //   );
-    //   characters.value = data.results;
 
-    //   console.log(characters.value);
-    // };
     onMounted(load);
 
     const next = async () => {
