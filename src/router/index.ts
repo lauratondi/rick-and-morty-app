@@ -3,7 +3,7 @@ import Home from '@/components/Home.vue';
 import Characters from '@/components/Characters.vue';
 import CharacterPage from '@/components/CharacterPage.vue';
 import Locations from '@/components/Locations.vue';
-import Location from '@/components/Location.vue';
+import LocationPage from '@/components/LocationPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -31,8 +31,8 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/locations/:id',
-    name: 'Location',
-    component: Location,
+    name: 'LocationPage',
+    component: LocationPage,
   },
   // {
   //   path: '/random',

@@ -28,42 +28,13 @@
 <script lang="ts">
 import { onMounted, ref, PropType, defineComponent } from 'vue';
 
-// import { Location } from '@/types';
+import { Location } from '@/types';
 
 export default defineComponent({
   name: 'Locations',
-  // props: {
-  //   location: {
-  //     type: Object as PropType<Location>,
-  //     required: true,
-  //   },
-  // },
-
-  // data() {
-  //   return {
-  //     locations: [] as Location[],
-  //     location: {} as Location,
-  //   };
-  // },
-
-  // mounted: {
-  //   async getLocations() {
-  //     const locations = ref([]);
-  //     const res = await fetch(`https://rickandmortyapi.com/api/location`);
-
-  //     const data = await res.json();
-  //     locations.value = data.results;
-
-  //     console.log(locations.value);
-  //   },
-  // },
-
-  // async created() {
-  //   this.getLocations();
-  // },
 
   setup() {
-    const locations = ref([]);
+    const locations = ref([] as any);
     const page = ref(1);
 
     const load = async () => {
