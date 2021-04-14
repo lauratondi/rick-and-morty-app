@@ -55,7 +55,9 @@
             </div>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/random">Random</router-link>
+            <router-link class="nav-link" :to="`/characters/${randomId}`"
+              >Random</router-link
+            >
           </li>
         </ul>
       </div>
@@ -66,6 +68,12 @@
 <script>
 export default {
   name: 'Navbar',
+
+  props: {
+    randomId: {
+      default: Math.floor(Math.random() * 183),
+    },
+  },
 };
 </script>
 

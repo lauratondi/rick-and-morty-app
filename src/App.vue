@@ -36,6 +36,7 @@ export default {
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 #container {
@@ -46,6 +47,8 @@ body {
   background-color: #222b31;
   width: 100vw;
   height: 100%;
+  /* position: relative; */
   /* overflow-x: hidden; */
+  /* overflow-y: auto; */
 }
 </style>

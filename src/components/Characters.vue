@@ -40,15 +40,34 @@ import { onMounted, ref, defineComponent, PropType } from 'vue';
 import { Character } from '@/types';
 import axios from 'axios';
 
+// interface Character {
+//   id: number;
+//   name: string;
+//   status: string;
+//   species: string;
+//   type: string;
+//   gender: string;
+//   origin: string;
+//   location: string;
+//   image: string;
+//   created: string;
+// }
 export default defineComponent({
   name: 'Characters',
 
-  props: {
-    character: {
-      type: Object,
-      required: true,
-    },
-  },
+  // props: {
+  //   character: {
+  //     type: Object as PropType<Character>,
+  //     required: true,
+  //   },
+  // },
+
+  // data() {
+  //   return {
+  //     characters: [] as Character[],
+  //     character: {} as Character,
+  //   };
+  // },
   setup() {
     const characters = ref([] as any);
     const page = ref(1);

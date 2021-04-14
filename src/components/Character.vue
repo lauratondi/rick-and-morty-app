@@ -1,14 +1,16 @@
 <template>
-  <div class="card text-center" v-if="character !== null">
-    <div class="card-header">
-      {{ name }}
-    </div>
-    <div class="card-body">
-      <img :class="status" :src="image" alt=".." />
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer">
-      {{ type }}
+  <div class="card-container">
+    <div class="card text-center" :class="status">
+      <div class="card-header">
+        {{ name }}
+      </div>
+      <div class="card-body">
+        <img :src="image" alt=".." />
+        <p class="card-text"></p>
+        <p><b>Origin:</b> {{ origin.name }}</p>
+        <p><b>Location:</b> {{ location.name }}</p>
+      </div>
+      <div class="card-footer">{{ status }} | {{ species }}</div>
     </div>
   </div>
 </template>
@@ -25,7 +27,7 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    type: {
+    species: {
       type: String,
       required: true,
     },
@@ -35,33 +37,30 @@ export default defineComponent({
     },
     status: {
       type: String,
+      required: true,
     },
-  },
-
-  setup() {
-    const character = ref({});
-
-    const route = useRoute();
-    onMounted(async () => {
-      const res = await fetch(
-        `https://rickandmortyapi.com/api/character/${route.params.id}`
-      );
-
-      const data = await res.json();
-      character.value = data;
-
-      console.log(character.value);
-    });
-
-    return {
-      character,
-    };
+    origin: {
+      type: Object,
+      required: true,
+    },
+    location: {
+      type: Object,
+      required: true,
+    },
   },
 });
 </script>
 
 <style scoped>
-.card {
+.card-container {
   margin-top: 15%;
+  height: 100vh;
+}
+.Alive {
+  border: green 5px solid;
+}
+
+.Dead {
+  border: 5px solid red;
 }
 </style>

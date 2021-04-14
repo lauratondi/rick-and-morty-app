@@ -59,6 +59,7 @@ export default {
 
       // console.log(data);
       // mainCharacters.value = data;
+
       const res = await fetch(
         'https://rickandmortyapi.com/api/character/5,7,11,183,14,20,1,2,3,4,'
       );
