@@ -43,10 +43,10 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 // import axios from 'axios';
 
-export default {
+export default defineComponent({
   name: 'MainCharacters',
 
   setup() {
@@ -87,7 +87,7 @@ export default {
       sortByCreated,
     };
   },
-};
+});
 </script>
 
 <style scoped>

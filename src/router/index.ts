@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '@/views/Home.vue';
+import Random from '@/views/Random.vue';
 import Characters from '@/components/Characters.vue';
 import CharacterPage from '@/views/CharacterPage.vue';
 import Locations from '@/components/Locations.vue';
@@ -34,11 +35,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'LocationPage',
     component: LocationPage,
   },
-  // {
-  //   path: '/random',
-  //   name: 'Random',
-  //   component: Random,
-  // },
+  {
+    path: '/random',
+    name: 'Random',
+    component: Random,
+  },
 ];
 
 const router = createRouter({

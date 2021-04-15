@@ -55,9 +55,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" :to="`/characters/${randomId}`"
-              >Random</router-link
-            >
+            <router-link class="nav-link" to="/random">Random</router-link>
           </li>
         </ul>
       </div>
