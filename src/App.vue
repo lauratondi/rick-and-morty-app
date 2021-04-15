@@ -2,25 +2,27 @@
   <div id="container">
     <Navbar />
     <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    Footer,
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 :root {
-  --primary-color: #39a2a0;
   --light-green: #80c352;
   --dark-green: #1f8b4f;
   --dark-color: #333333;
@@ -35,8 +37,16 @@ export default {
 }
 body {
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100vw;
   height: 100vh;
+}
+
+p {
+  font-weight: 400;
+}
+b {
+  font-weight: 500;
 }
 
 #container {
@@ -44,11 +54,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #222b31;
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  /* position: relative; */
-  /* overflow-x: hidden; */
-  /* overflow-y: auto; */
+  background-color: var(--grey-color);
+  overflow-x: hidden;
 }
 </style>

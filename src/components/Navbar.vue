@@ -63,7 +63,7 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'Navbar',
 
@@ -82,8 +82,8 @@ nav {
   flex-wrap: nowrap;
   padding-right: 5%;
   padding-left: 5%;
-  background-color: #80c352;
-  border-bottom: #1f8b4f 3px solid;
+  background-color: var(--light-green);
+  border-bottom: var(--dark-green) 3px solid;
 }
 .navbar-brand {
   width: 30%;
@@ -104,5 +104,6 @@ li {
 
 .dropdown-menu {
   background-color: #80c352;
+  border: none;
 }
 </style>

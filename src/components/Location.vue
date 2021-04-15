@@ -68,6 +68,6 @@ export default defineComponent({
 }
 
 .btn {
-  background-color: #1f8b4f;
+  background-color: var(--dark-green);
 }
 </style>

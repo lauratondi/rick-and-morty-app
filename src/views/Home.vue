@@ -19,6 +19,7 @@
       </ul>
     </div>
     <!-- / sorting dropdown -->
+
     <div class="row">
       <div v-for="character in mainCharacters" :key="character.id">
         <div class="col-sm-3">
@@ -94,8 +95,10 @@ export default defineComponent({
 .cards {
   width: 100%;
   margin-top: 15%;
+  margin-bottom: 5%;
   overflow: hidden;
 }
+/* Sorting dropdown */
 .dropdown {
   display: flex;
   justify-content: flex-end;
@@ -103,33 +106,35 @@ export default defineComponent({
   margin-bottom: 2%;
 }
 .btn-secondary {
-  background-color: #1f8b4f;
+  background-color: var(--dark-green);
 }
 .btn-secondary.dropdown-toggle {
-  background-color: #1f8b4f;
-  border: #1f8b4f;
+  background-color: var(--dark-green);
+  border: var(--dark-green);
 }
 ul {
-  background-color: #1f8b4f;
+  background-color: var(--dark-green);
 }
 li {
-  background-color: #1f8b4f;
+  background-color: var(--dark-green);
   color: white;
 }
 li:hover {
-  background-color: #1f8b4f;
+  background-color: var(--dark-green);
   cursor: pointer;
 }
-/* / sorting dropdown */
+
+/* Cards container */
 .row {
   justify-content: center;
   margin-right: 0;
   margin-left: 0;
 }
+.row > * {
+  width: unset;
+}
 
 .col-sm-3 {
-  /* display: flex;
-  justify-content: center; */
   padding-bottom: 2%;
 }
 
@@ -137,7 +142,7 @@ li:hover {
   width: 18rem;
   border-radius: 2%;
   color: white;
-  background-color: #333333;
+  background-color: var(--dark-color);
 }
 .card:hover {
   text-decoration: none !important;
@@ -147,21 +152,20 @@ li:hover {
 }
 
 .Dead {
-  border: 5px solid red;
+  border: red 5px solid;
 }
 
 img {
   border-radius: 1%;
 }
 .card-body {
-  /* display: flex; */
   justify-content: space-between;
 }
 
 .card-text {
   display: flex;
-  justify-content: flex-start;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .card-text > * {
   margin-right: 2%;

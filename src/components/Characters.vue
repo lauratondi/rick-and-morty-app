@@ -104,9 +104,11 @@ export default defineComponent({
   margin-left: 0;
 }
 
+.row > * {
+  width: unset;
+}
+
 .col-sm-3 {
-  /* display: flex;
-  justify-content: center; */
   padding-bottom: 2%;
 }
 
@@ -114,7 +116,7 @@ export default defineComponent({
   width: 18rem;
   border-radius: 2%;
   color: white;
-  background-color: #333333;
+  background-color: var(--dark-color);
 }
 .card:hover {
   text-decoration: none !important;
@@ -132,7 +134,6 @@ img {
   border-radius: 1%;
 }
 .card-body {
-  /* display: flex; */
   justify-content: space-between;
 }
 
@@ -153,10 +154,14 @@ a:hover {
   text-decoration: none !important;
 }
 
+/* Pagination */
+nav {
+  margin-bottom: 5%;
+}
 .page-link {
   color: white !important;
-  background-color: #1f8b4f !important;
-  border: #222b31 1px solid;
+  background-color: var(--dark-green) !important;
+  border: var(--grey-color) 1px solid;
 }
 /* 668px */
 @media (max-width: 43em) {

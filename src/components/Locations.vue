@@ -75,9 +75,9 @@ export default defineComponent({
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
+  text-align: center;
   margin-top: 15%;
   overflow: hidden;
-  text-align: center;
 }
 
 .cards > * {
@@ -85,5 +85,9 @@ export default defineComponent({
 }
 .card {
   width: 30%;
+}
+/* pagination */
+nav {
+  margin-bottom: 5%;
 }
 </style>

@@ -51,11 +51,11 @@ export default defineComponent({
 
 <style scoped>
 .card-container {
-  margin-top: 15%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  margin-top: 15%;
 }
 .Alive {
   border: green 5px solid;
@@ -66,6 +66,6 @@ export default defineComponent({
 }
 .btn {
   margin-top: 10%;
-  background-color: #1f8b4f;
+  background-color: var(--dark-green);
 }
 </style>
