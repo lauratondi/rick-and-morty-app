@@ -5,7 +5,7 @@
       <h5>Location: {{ name }}</h5>
       <ul>
         <li v-for="resident in residents" :key="resident.id">
-          <Residents v-if="residents.length !== 0" :residents="residents" />
+          {{ residents }}
         </li>
       </ul>
       <router-link to="/locations"
@@ -19,7 +19,7 @@
 import { defineComponent, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import Residents from '@/components/Residents.vue';
-import Characters from '@/components/Characters.vue';
+import Character from '@/components/Character.vue';
 import { Location as LocationType } from '@/types';
 
 export default defineComponent({
@@ -30,33 +30,18 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    // residents: {
-    //   type: Array,
-    // },
-  },
-  components: {
-    Residents,
+    residents: {
+      type: Array,
+    },
   },
 
   setup() {
-    const residents = ref([] as any);
-
     const route = useRoute();
-    const getResidents = async () => {
-      const res = await fetch(
-        `https://rickandmortyapi.com/api/character/${route.params.id}`
-      );
 
-      const data = await res.json();
-      residents.value = data.results;
+    const residentId = window.location.search[1];
+    const characterId = new URLSearchParams(residentId);
 
-      console.log(residents.value);
-    };
-
-    onMounted(getResidents);
-    return {
-      residents,
-    };
+    console.log(characterId);
   },
 });
 </script>

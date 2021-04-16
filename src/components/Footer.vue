@@ -6,7 +6,7 @@
           href="https://www.en.d-tt.nl/"
           target="_blank"
           rel="noopener noreferrer"
-          >&copy; DDT</a
+          >2021 &copy; DDT</a
         >
       </p>
     </div>
@@ -65,7 +65,7 @@ footer {
   justify-content: space-evenly;
   width: 100%;
   height: 15%;
-  border-top: var(--dark-green) 1px solid;
+  border-top: var(--dark-green) 2px solid;
   color: white;
 }
 /* Offcanvas */

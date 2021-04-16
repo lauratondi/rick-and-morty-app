@@ -1,5 +1,6 @@
 <template>
   <div class="cards">
+    <h5 class="title">All Characters</h5>
     <div class="row">
       <div v-for="character in characters" :key="character.id">
         <div class="col-sm-3">
@@ -98,10 +99,16 @@ export default defineComponent({
   overflow: hidden;
 }
 
+.title {
+  text-align: center;
+  color: white;
+}
+
 .row {
   justify-content: center;
   margin-right: 0;
   margin-left: 0;
+  margin-top: 2%;
 }
 
 .row > * {
@@ -165,6 +172,9 @@ nav {
 }
 /* 668px */
 @media (max-width: 43em) {
+  .cards {
+    padding-top: 5%;
+  }
   .card {
     width: 15rem;
   }

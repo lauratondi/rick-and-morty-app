@@ -1,4 +1,5 @@
 <template>
+  <h5 class="title">All Locations</h5>
   <div class="cards">
     <div class="card" v-for="location in locations" :key="location.id">
       <h5 class="card-header">{{ location.name }}</h5>
@@ -11,6 +12,7 @@
       </div>
     </div>
   </div>
+  <!-- /location container -->
   <nav>
     <ul class="pagination">
       <li class="page-item">
@@ -23,6 +25,7 @@
       </li>
     </ul>
   </nav>
+  <!-- /pagination -->
 </template>
 
 <script lang="ts">
@@ -69,6 +72,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.title {
+  margin-top: 15%;
+  text-align: center;
+  color: white;
+}
 .cards {
   display: flex;
   flex-direction: row;
@@ -76,18 +84,28 @@ export default defineComponent({
   justify-content: space-evenly;
   width: 100%;
   text-align: center;
-  margin-top: 15%;
+  margin-top: 2%;
   overflow: hidden;
 }
 
 .cards > * {
   margin-bottom: 1%;
 }
+
 .card {
   width: 30%;
 }
 /* pagination */
 nav {
   margin-bottom: 5%;
+}
+/* 668px */
+@media (max-width: 43em) {
+  .title {
+    padding-top: 5%;
+  }
+  .card {
+    width: 80%;
+  }
 }
 </style>

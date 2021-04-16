@@ -1,5 +1,6 @@
 <template>
   <div class="card-container">
+    <h5 class="title">Meet:</h5>
     <div class="card text-center" :class="status">
       <div class="card-header">
         {{ name }}
@@ -59,9 +60,16 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 15%;
 }
+
+.title {
+  margin-bottom: 5%;
+  text-align: center;
+  color: white;
+}
+
 .Alive {
   border: green 5px solid;
 }
@@ -71,6 +79,19 @@ export default defineComponent({
 }
 .btn {
   margin-top: 10%;
+  margin-bottom: 5%;
   background-color: var(--dark-green);
+}
+/* 668px */
+@media (max-width: 43em) {
+  .card-container {
+    padding-top: 5%;
+  }
+  .card {
+    width: 80%;
+  }
+  img {
+    width: 90%;
+  }
 }
 </style>

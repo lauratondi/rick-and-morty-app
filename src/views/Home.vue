@@ -1,5 +1,6 @@
 <template>
   <div class="cards">
+    <h5 class="title">Main Characters</h5>
     <div class="dropdown">
       <a
         class="btn btn-secondary dropdown-toggle"
@@ -98,6 +99,10 @@ export default defineComponent({
   margin-bottom: 5%;
   overflow: hidden;
 }
+.title {
+  text-align: center;
+  color: white;
+}
 /* Sorting dropdown */
 .dropdown {
   display: flex;
@@ -177,6 +182,9 @@ a:hover {
 
 /* 668px */
 @media (max-width: 43em) {
+  .cards {
+    padding-top: 5%;
+  }
   .card {
     width: 15rem;
   }
