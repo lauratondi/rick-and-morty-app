@@ -13,6 +13,7 @@
       </div>
       <div class="card-footer">{{ status }} | {{ species }}</div>
     </div>
+    <!-- <RelativeCharacters :relativeCharacters="relativeCharacters" /> -->
     <router-link to="/characters"
       ><button class="btn">Back to Characters</button></router-link
     >
@@ -23,6 +24,7 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { Character } from '@/types';
+import { setup } from 'vue-class-component';
 
 export default defineComponent({
   name: 'Character',
@@ -52,6 +54,32 @@ export default defineComponent({
       required: true,
     },
   },
+
+  // components: {
+  //   RelativeCharacters,
+  // },
+
+  // setup() {
+  //   const relativeCharacters = ref([] as any);
+  //   const route = useRoute();
+
+  //   const getRelatives = async () => {
+  //     // const name = data.results.name
+  //     const res = await fetch(
+  //       `https://rickandmortyapi.com/api/character/?name=${name}`
+  //     );
+
+  //     const data = await res.json();
+  //     relativeCharacters.value = data.results.name;
+
+  //     console.log(relativeCharacters.value);
+  //   };
+  //   onMounted(getRelatives);
+
+  //   return {
+  //     relativeCharacters,
+  //   };
+  // },
 });
 </script>
 
