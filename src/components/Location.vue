@@ -99,4 +99,13 @@ export default defineComponent({
   margin-bottom: 10%;
   background-color: var(--dark-green);
 }
+/* 668px */
+@media (max-width: 43em) {
+  .cards {
+    padding-top: 5%;
+  }
+  /* .card {
+    width: 15rem;
+  } */
+}
 </style>

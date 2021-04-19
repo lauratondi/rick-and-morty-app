@@ -11,7 +11,6 @@
     </div>
     <div class="card-footer">{{ status }} | {{ species }}</div>
   </div>
-  <!-- <RelativeCharacters :relativeCharacters="relativeCharacters" /> -->
 </template>
 
 <script lang="ts">
@@ -62,6 +61,11 @@ export default defineComponent({
 } */
 .card {
   margin-bottom: 2%;
+  /* width: 18rem; */
+  border-radius: 2%;
+  /* color: black; */
+  color: white;
+  background-color: var(--dark-color);
 }
 
 .Alive {
@@ -72,16 +76,21 @@ export default defineComponent({
   border: red 5px solid;
 }
 
+img {
+  width: 100%;
+  border-radius: 50%;
+}
+.card-header {
+  border-bottom: white 2px solid;
+}
+.card-footer {
+  border-top: white 2px solid;
+}
+
 /* 668px */
 @media (max-width: 43em) {
-  /* .card-container {
-    padding-top: 5%;
-  } */
   .card {
-    width: 80%;
-  }
-  img {
-    width: 90%;
+    width: 15rem;
   }
 }
 </style>

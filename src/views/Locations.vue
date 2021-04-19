@@ -95,6 +95,14 @@ export default defineComponent({
 .card {
   width: 30%;
 }
+a {
+  color: var(--light-green);
+}
+
+a:hover {
+  color: var(--dark-green);
+  text-decoration: none;
+}
 /* pagination */
 nav {
   margin-bottom: 5%;

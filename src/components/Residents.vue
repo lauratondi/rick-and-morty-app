@@ -10,8 +10,8 @@
       :origin="resident.origin"
       :location="resident.location"
     />
-    <!-- </div> -->
   </div>
+  <!-- </div> -->
 </template>
 
 <script lang="ts">

@@ -25,7 +25,7 @@
       <div v-for="character in mainCharacters" :key="character.id">
         <div class="col-sm-3">
           <router-link :to="`/characters/${character.id}`">
-            <div class="card" :class="character.status">
+            <!-- <div class="card" :class="character.status">
               <img :src="character.image" alt=".." />
               <div class="card-body">
                 <h5 class="card-title">{{ character.name }}</h5>
@@ -35,6 +35,20 @@
                   <p><b>Origin:</b> {{ character.origin.name }}</p>
                   <p><b>Location:</b> {{ character.location.name }}</p>
                 </div>
+              </div>
+            </div> -->
+            <div class="card text-center" :class="character.status">
+              <div class="card-header">
+                {{ character.name }}
+              </div>
+              <div class="card-body">
+                <img :src="character.image" alt=".." />
+                <p class="card-text"></p>
+                <p><b>Origin:</b> {{ character.origin.name }}</p>
+                <p><b>Location:</b> {{ character.location.name }}</p>
+              </div>
+              <div class="card-footer">
+                {{ character.status }} | {{ character.species }}
               </div>
             </div>
           </router-link>
@@ -140,12 +154,13 @@ li:hover {
 }
 
 .col-sm-3 {
-  padding-bottom: 2%;
+  padding-bottom: 5%;
 }
 
 .card {
   width: 18rem;
   border-radius: 2%;
+  /* color: black; */
   color: white;
   background-color: var(--dark-color);
 }
@@ -161,19 +176,26 @@ li:hover {
 }
 
 img {
-  border-radius: 1%;
+  width: 100%;
+  border-radius: 50%;
+}
+.card-header {
+  border-bottom: white 2px solid;
+}
+.card-footer {
+  border-top: white 2px solid;
 }
 .card-body {
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .card-text {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-start; */
 }
 .card-text > * {
-  margin-right: 2%;
+  /* margin-right: 2%; */
 }
 
 a:hover {

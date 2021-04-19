@@ -5,7 +5,7 @@
       <div v-for="character in characters" :key="character.id">
         <div class="col-sm-3">
           <router-link :to="`/characters/${character.id}`">
-            <div class="card" :class="character.status">
+            <!-- <div class="card" :class="character.status">
               <img :src="character.image" alt=".." />
               <div class="card-body">
                 <h5 class="card-title">{{ character.name }}</h5>
@@ -15,6 +15,20 @@
                   <p><b>Origin:</b> {{ character.origin.name }}</p>
                   <p><b>Location:</b> {{ character.location.name }}</p>
                 </div>
+              </div>
+            </div> -->
+            <div class="card text-center" :class="character.status">
+              <div class="card-header">
+                {{ character.name }}
+              </div>
+              <div class="card-body">
+                <img :src="character.image" alt=".." />
+                <p class="card-text"></p>
+                <p><b>Origin:</b> {{ character.origin.name }}</p>
+                <p><b>Location:</b> {{ character.location.name }}</p>
+              </div>
+              <div class="card-footer">
+                {{ character.status }} | {{ character.species }}
               </div>
             </div>
           </router-link>
@@ -81,8 +95,9 @@ export default defineComponent({
 
 <style scoped>
 .cards {
-  margin-top: 15%;
   width: 100%;
+  margin-top: 15%;
+
   overflow: hidden;
 }
 
@@ -103,7 +118,7 @@ export default defineComponent({
 }
 
 .col-sm-3 {
-  padding-bottom: 2%;
+  padding-bottom: 5%;
 }
 
 .card {
@@ -125,9 +140,16 @@ export default defineComponent({
 }
 
 img {
-  border-radius: 1%;
+  width: 100%;
+  border-radius: 50%;
 }
-.card-body {
+.card-header {
+  border-bottom: white 2px solid;
+}
+.card-footer {
+  border-top: white 2px solid;
+}
+/* .card-body {
   justify-content: space-between;
 }
 
@@ -138,11 +160,11 @@ img {
 }
 .card-text > * {
   margin-right: 2%;
-}
+} */
 
-a {
+/* a {
   color: black !important;
-}
+} */
 
 a:hover {
   text-decoration: none !important;

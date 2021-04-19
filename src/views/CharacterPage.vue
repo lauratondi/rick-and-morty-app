@@ -1,17 +1,20 @@
 <template>
-  <h5 class="title">Meet:</h5>
-  <Character
-    v-if="Object.keys(character).length !== 0"
-    :name="character.name"
-    :species="character.species"
-    :image="character.image"
-    :status="character.status"
-    :origin="character.origin"
-    :location="character.location"
-  />
-  <router-link to="/characters"
-    ><button class="btn">Back to Characters</button></router-link
-  >
+  <div class="card-container">
+    <h5 class="title">Meet:</h5>
+    <Character
+      v-if="Object.keys(character).length !== 0"
+      :name="character.name"
+      :species="character.species"
+      :image="character.image"
+      :status="character.status"
+      :origin="character.origin"
+      :location="character.location"
+    />
+
+    <router-link to="/characters"
+      ><button class="btn">Back to Characters</button></router-link
+    >
+  </div>
 </template>
 
 <script lang="ts">
@@ -57,15 +60,28 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.title {
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   margin-top: 15%;
-  margin-bottom: 5%;
+  color: black;
+}
+.title {
+  /* margin-top: 15%;
+  margin-bottom: 5%; */
   text-align: center;
   color: white;
 }
 .btn {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   background-color: var(--dark-green);
+}
+@media (max-width: 43em) {
+  .card-container {
+    margin-top: 20%;
+  }
 }
 </style>

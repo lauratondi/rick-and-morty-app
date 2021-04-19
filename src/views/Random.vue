@@ -62,7 +62,8 @@ export default defineComponent({
 }
 
 .title {
-  margin-bottom: 5%;
+  /* margin-top: 15%; */
+  /* margin-bottom: 5%; */
   text-align: center;
   color: white;
 }
@@ -76,7 +77,7 @@ export default defineComponent({
 /* 668px */
 @media (max-width: 43em) {
   .card-container {
-    padding-top: 5%;
+    margin-top: 20%;
   }
 }
 </style>

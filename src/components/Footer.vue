@@ -78,18 +78,15 @@ footer {
   background-color: var(--dark-color);
   color: white;
 }
-.offcanvas-body {
-  display: flex;
-  justify-content: space-evenly;
-}
 
 a {
   color: white;
 }
 /* 668px */
-@media (max-width: 43em) {
+@media (min-width: 43em) {
   .offcanvas-body {
-    display: inline;
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 </style>
