@@ -5,17 +5,18 @@
       <Residents :residents="characters" />
     </div>
   </div>
+
   <router-link to="/locations"
     ><button class="btn">Back to Locations</button></router-link
   >
+  <div v-if="characters.length === 0">
+    <p style="color: white; height: 100vh">No Residents for this dimension</p>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-
-import Character from '@/components/Character.vue';
-import { Location as LocationType } from '@/types';
 import Residents from '@/components/Residents.vue';
 
 export default defineComponent({
@@ -31,9 +32,7 @@ export default defineComponent({
 
   setup() {
     const residents = ref([] as any);
-    const character = ref();
     const characters = ref([] as any);
-    const location = ref();
     const route = useRoute();
 
     const getResidents = async () => {
@@ -70,11 +69,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* h5 {
-  margin-top: 15%;
-  color: white;
-  text-align: center;
-} */
 .cards {
   margin-top: 15%;
   width: 100%;
@@ -104,8 +98,5 @@ export default defineComponent({
   .cards {
     padding-top: 5%;
   }
-  /* .card {
-    width: 15rem;
-  } */
 }
 </style>

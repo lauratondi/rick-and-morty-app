@@ -20,9 +20,6 @@ import { defineComponent, ref, onMounted } from 'vue';
 import Character from '@/components/Character.vue';
 
 export default defineComponent({
-  // props: {
-  //   randomCharacter,
-  // },
   components: {
     Character,
   },
@@ -62,8 +59,6 @@ export default defineComponent({
 }
 
 .title {
-  /* margin-top: 15%; */
-  /* margin-bottom: 5%; */
   text-align: center;
   color: white;
 }

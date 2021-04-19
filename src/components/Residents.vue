@@ -1,6 +1,5 @@
 <template>
   <div v-for="resident in residents" :key="resident.id">
-    <!-- <div class="col-sm-3"> -->
     <Character
       v-if="Object.keys(resident).length !== 0"
       :name="resident.name"
@@ -11,7 +10,6 @@
       :location="resident.location"
     />
   </div>
-  <!-- </div> -->
 </template>
 
 <script lang="ts">

@@ -10,7 +10,6 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import Location from '@/components/Location.vue';
-import axios from 'axios';
 
 export default defineComponent({
   components: {
@@ -19,8 +18,6 @@ export default defineComponent({
 
   setup() {
     const location = ref({});
-    // const residents = ref([] as any);
-
     const route = useRoute();
 
     onMounted(async () => {

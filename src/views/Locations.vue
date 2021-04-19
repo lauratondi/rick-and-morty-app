@@ -29,9 +29,7 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref, PropType, defineComponent } from 'vue';
-
-import { Location } from '@/types';
+import { onMounted, ref, defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Locations',
@@ -84,7 +82,6 @@ export default defineComponent({
   justify-content: space-evenly;
   width: 100%;
   text-align: center;
-  margin-top: 2%;
   overflow: hidden;
 }
 

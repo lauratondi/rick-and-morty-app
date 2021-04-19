@@ -5,18 +5,6 @@
       <div v-for="character in characters" :key="character.id">
         <div class="col-sm-3">
           <router-link :to="`/characters/${character.id}`">
-            <!-- <div class="card" :class="character.status">
-              <img :src="character.image" alt=".." />
-              <div class="card-body">
-                <h5 class="card-title">{{ character.name }}</h5>
-                <p>{{ character.status }} | {{ character.species }}</p>
-
-                <div class="card-text">
-                  <p><b>Origin:</b> {{ character.origin.name }}</p>
-                  <p><b>Location:</b> {{ character.location.name }}</p>
-                </div>
-              </div>
-            </div> -->
             <div class="card text-center" :class="character.status">
               <div class="card-header">
                 {{ character.name }}
@@ -51,8 +39,7 @@
 </template>
 
 <script lang="ts">
-import { onMounted, ref, defineComponent, PropType } from 'vue';
-import { Character } from '@/types';
+import { onMounted, ref, defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Characters',
@@ -97,7 +84,6 @@ export default defineComponent({
 .cards {
   width: 100%;
   margin-top: 15%;
-
   overflow: hidden;
 }
 
@@ -149,22 +135,6 @@ img {
 .card-footer {
   border-top: white 2px solid;
 }
-/* .card-body {
-  justify-content: space-between;
-}
-
-.card-text {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.card-text > * {
-  margin-right: 2%;
-} */
-
-/* a {
-  color: black !important;
-} */
 
 a:hover {
   text-decoration: none !important;

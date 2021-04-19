@@ -18,19 +18,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, PropType } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-// import { Character  } from '@/types';
 import Character from '@/components/Character.vue';
 
 export default defineComponent({
-  // props: {
-  //   detail: {
-  //     type: Object as PropType<CharacterType>,
-  //     required: true,
-  //   },
-  // },
-
   components: {
     Character,
   },
@@ -69,8 +61,6 @@ export default defineComponent({
   color: black;
 }
 .title {
-  /* margin-top: 15%;
-  margin-bottom: 5%; */
   text-align: center;
   color: white;
 }

@@ -14,10 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
-import { Character } from '@/types';
-import { setup } from 'vue-class-component';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Character',
@@ -51,19 +48,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* .card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  margin-top: 15%;
-  color: black;
-} */
 .card {
   margin-bottom: 2%;
-  /* width: 18rem; */
   border-radius: 2%;
-  /* color: black; */
   color: white;
   background-color: var(--dark-color);
 }

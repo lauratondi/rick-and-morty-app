@@ -25,18 +25,6 @@
       <div v-for="character in mainCharacters" :key="character.id">
         <div class="col-sm-3">
           <router-link :to="`/characters/${character.id}`">
-            <!-- <div class="card" :class="character.status">
-              <img :src="character.image" alt=".." />
-              <div class="card-body">
-                <h5 class="card-title">{{ character.name }}</h5>
-                <p>{{ character.status }} | {{ character.species }}</p>
-
-                <div class="card-text">
-                  <p><b>Origin:</b> {{ character.origin.name }}</p>
-                  <p><b>Location:</b> {{ character.location.name }}</p>
-                </div>
-              </div>
-            </div> -->
             <div class="card text-center" :class="character.status">
               <div class="card-header">
                 {{ character.name }}
@@ -60,7 +48,6 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
-// import axios from 'axios';
 
 export default defineComponent({
   name: 'MainCharacters',
@@ -69,13 +56,6 @@ export default defineComponent({
     const mainCharacters = ref([] as any);
 
     onMounted(async () => {
-      // const { data } = await axios.get(
-      //   'https://rickandmortyapi.com/api/character/1,2,3,4,5,7,11,183,14,20'
-      // );
-
-      // console.log(data);
-      // mainCharacters.value = data;
-
       const res = await fetch(
         'https://rickandmortyapi.com/api/character/5,7,11,183,14,20,1,2,3,4,'
       );
@@ -160,7 +140,6 @@ li:hover {
 .card {
   width: 18rem;
   border-radius: 2%;
-  /* color: black; */
   color: white;
   background-color: var(--dark-color);
 }
@@ -184,18 +163,6 @@ img {
 }
 .card-footer {
   border-top: white 2px solid;
-}
-.card-body {
-  /* justify-content: space-between; */
-}
-
-.card-text {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; */
-}
-.card-text > * {
-  /* margin-right: 2%; */
 }
 
 a:hover {
