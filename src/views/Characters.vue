@@ -43,19 +43,6 @@ import { Character } from '@/types';
 export default defineComponent({
   name: 'Characters',
 
-  // props: {
-  //   character: {
-  //     type: Object as PropType<Character>,
-  //     required: true,
-  //   },
-  // },
-
-  // data() {
-  //   return {
-  //     characters: [] as Character[],
-  //     character: {} as Character,
-  //   };
-  // },
   setup() {
     const characters = ref([] as any);
     const page = ref(1);

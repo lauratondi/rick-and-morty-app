@@ -1,23 +1,30 @@
 <template>
-  <RandomCharacter
-    @getRandom="getRandom"
-    v-if="Object.keys(randomCharacter).length !== 0"
-    :name="randomCharacter.name"
-    :species="randomCharacter.species"
-    :image="randomCharacter.image"
-    :status="randomCharacter.status"
-    :origin="randomCharacter.origin"
-    :location="randomCharacter.location"
-  />
+  <div class="card-container">
+    <h5 class="title">Meet a random character:</h5>
+    <Character
+      @getRandom="getRandom"
+      v-if="Object.keys(randomCharacter).length !== 0"
+      :name="randomCharacter.name"
+      :species="randomCharacter.species"
+      :image="randomCharacter.image"
+      :status="randomCharacter.status"
+      :origin="randomCharacter.origin"
+      :location="randomCharacter.location"
+    />
+    <button class="btn" @click="getRandom">Random</button>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
-import RandomCharacter from '@/components/RandomCharacter.vue';
+import Character from '@/components/Character.vue';
 
 export default defineComponent({
+  // props: {
+  //   randomCharacter,
+  // },
   components: {
-    RandomCharacter,
+    Character,
   },
 
   setup() {
@@ -43,3 +50,33 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 15%;
+  color: black;
+}
+
+.title {
+  margin-bottom: 5%;
+  text-align: center;
+  color: white;
+}
+
+.btn {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: var(--dark-green);
+}
+
+/* 668px */
+@media (max-width: 43em) {
+  .card-container {
+    padding-top: 5%;
+  }
+}
+</style>

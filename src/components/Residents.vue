@@ -1,17 +1,17 @@
 <template>
-  <ul>
-    <li v-for="resident in residents" :key="resident.id">
-      <Character
-        v-if="Object.keys(resident).length !== 0"
-        :name="resident.name"
-        :species="resident.species"
-        :image="resident.image"
-        :status="resident.status"
-        :origin="resident.origin"
-        :location="resident.location"
-      />
-    </li>
-  </ul>
+  <div v-for="resident in residents" :key="resident.id">
+    <!-- <div class="col-sm-3"> -->
+    <Character
+      v-if="Object.keys(resident).length !== 0"
+      :name="resident.name"
+      :species="resident.species"
+      :image="resident.image"
+      :status="resident.status"
+      :origin="resident.origin"
+      :location="resident.location"
+    />
+    <!-- </div> -->
+  </div>
 </template>
 
 <script lang="ts">
@@ -28,3 +28,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.row > * {
+  width: unset !important;
+}
+</style>

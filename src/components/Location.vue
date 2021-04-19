@@ -1,20 +1,13 @@
 <template>
-  <div class="loc">
-    Locations
-    <div>
-      <h5>Location: {{ name }}</h5>
-      <!-- <ul>
-        <li v-for="resident in residents" :key="resident.id">
-          {{ residents }}
-        </li>
-      </ul> -->
-      <!-- <Residents :residents="residents" /> -->
+  <div class="cards">
+    <h5 class="title">Welcome in {{ name }}</h5>
+    <div class="row">
       <Residents :residents="characters" />
-      <router-link to="/locations"
-        ><button class="btn">Back to Locations</button></router-link
-      >
     </div>
   </div>
+  <router-link to="/locations"
+    ><button class="btn">Back to Locations</button></router-link
+  >
 </template>
 
 <script lang="ts">
@@ -26,7 +19,6 @@ import { Location as LocationType } from '@/types';
 import Residents from '@/components/Residents.vue';
 
 export default defineComponent({
-  components: { Residents },
   name: 'Location',
 
   props: {
@@ -34,15 +26,13 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    // residents: {
-    //   type: Array,
-    // },
   },
+  components: { Residents },
 
   setup() {
-    const residents = ref<number[]>([]);
+    const residents = ref([] as any);
     const character = ref();
-    const characters = ref<any[]>([]);
+    const characters = ref([] as any);
     const location = ref();
     const route = useRoute();
 
@@ -69,23 +59,6 @@ export default defineComponent({
 
       return characters.value;
     };
-    // const getResidents = () => {
-    //   Promise.all([
-    //     fetch(`https://rickandmortyapi.com/api/location/${route.params.id}`),
-    //     fetch(`https://rickandmortyapi.com/api/character/${route.params.id}`),
-    //   ])
-    //     .then(function (response) {
-    //       return Promise.all(
-    //         response.map(function (response) {
-    //           return response.json();
-    //         })
-    //       );
-    //     })
-    //     .then(function (data) {
-    //       residents.value = data;
-    //       console.log(data);
-    //     });
-    // };
 
     onMounted(getResidents);
 
@@ -97,12 +70,33 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.loc {
+/* h5 {
   margin-top: 15%;
   color: white;
+  text-align: center;
+} */
+.cards {
+  margin-top: 15%;
+  width: 100%;
+  overflow: hidden;
 }
 
+.title {
+  text-align: center;
+  color: white;
+}
+.row {
+  justify-content: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 2%;
+}
+.row > * {
+  width: unset !important;
+}
 .btn {
+  margin-top: 10%;
+  margin-bottom: 10%;
   background-color: var(--dark-green);
 }
 </style>

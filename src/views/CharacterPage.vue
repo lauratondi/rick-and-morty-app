@@ -1,4 +1,5 @@
 <template>
+  <h5 class="title">Meet:</h5>
   <Character
     v-if="Object.keys(character).length !== 0"
     :name="character.name"
@@ -8,6 +9,9 @@
     :origin="character.origin"
     :location="character.location"
   />
+  <router-link to="/characters"
+    ><button class="btn">Back to Characters</button></router-link
+  >
 </template>
 
 <script lang="ts">
@@ -51,3 +55,17 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.title {
+  margin-top: 15%;
+  margin-bottom: 5%;
+  text-align: center;
+  color: white;
+}
+.btn {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  background-color: var(--dark-green);
+}
+</style>

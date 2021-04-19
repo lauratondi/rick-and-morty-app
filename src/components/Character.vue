@@ -1,23 +1,17 @@
 <template>
-  <div class="card-container">
-    <h5 class="title">Meet:</h5>
-    <div class="card text-center" :class="status">
-      <div class="card-header">
-        {{ name }}
-      </div>
-      <div class="card-body">
-        <img :src="image" alt=".." />
-        <p class="card-text"></p>
-        <p><b>Origin:</b> {{ origin.name }}</p>
-        <p><b>Location:</b> {{ location.name }}</p>
-      </div>
-      <div class="card-footer">{{ status }} | {{ species }}</div>
+  <div class="card text-center" :class="status">
+    <div class="card-header">
+      {{ name }}
     </div>
-    <!-- <RelativeCharacters :relativeCharacters="relativeCharacters" /> -->
-    <router-link to="/characters"
-      ><button class="btn">Back to Characters</button></router-link
-    >
+    <div class="card-body">
+      <img :src="image" alt=".." />
+      <p class="card-text"></p>
+      <p><b>Origin:</b> {{ origin.name }}</p>
+      <p><b>Location:</b> {{ location.name }}</p>
+    </div>
+    <div class="card-footer">{{ status }} | {{ species }}</div>
   </div>
+  <!-- <RelativeCharacters :relativeCharacters="relativeCharacters" /> -->
 </template>
 
 <script lang="ts">
@@ -54,48 +48,20 @@ export default defineComponent({
       required: true,
     },
   },
-
-  // components: {
-  //   RelativeCharacters,
-  // },
-
-  // setup() {
-  //   const relativeCharacters = ref([] as any);
-  //   const route = useRoute();
-
-  //   const getRelatives = async () => {
-  //     // const name = data.results.name
-  //     const res = await fetch(
-  //       `https://rickandmortyapi.com/api/character/?name=${name}`
-  //     );
-
-  //     const data = await res.json();
-  //     relativeCharacters.value = data.results.name;
-
-  //     console.log(relativeCharacters.value);
-  //   };
-  //   onMounted(getRelatives);
-
-  //   return {
-  //     relativeCharacters,
-  //   };
-  // },
 });
 </script>
 
 <style scoped>
-.card-container {
+/* .card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   margin-top: 15%;
-}
-
-.title {
-  margin-bottom: 5%;
-  text-align: center;
-  color: white;
+  color: black;
+} */
+.card {
+  margin-bottom: 2%;
 }
 
 .Alive {
@@ -105,16 +71,12 @@ export default defineComponent({
 .Dead {
   border: red 5px solid;
 }
-.btn {
-  margin-top: 10%;
-  margin-bottom: 5%;
-  background-color: var(--dark-green);
-}
+
 /* 668px */
 @media (max-width: 43em) {
-  .card-container {
+  /* .card-container {
     padding-top: 5%;
-  }
+  } */
   .card {
     width: 80%;
   }
