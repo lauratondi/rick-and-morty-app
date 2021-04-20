@@ -1,17 +1,19 @@
 # rick-and-morty-app
 
 ## Project setup
-```
+
 To run the application, you need to install the dependencies by running the following command:
 
-<i>npm install</i> <br/>
+```
+npm install
 
 ```
 
 ### Compiles and hot-reloads for development
-```
 In the project directory, you can run:
-<i>npm run serve</i>
+
+```
+npm run serve
 ```
 
 ### Compiles and minifies for production
