@@ -13,7 +13,7 @@
   <div class="collapse" id="collapseExample">
     <div id="related">
       <div v-for="related in relateds" :key="related.id">
-        <div class="card text-center" :class="related.status">
+        <!-- <div class="card text-center" :class="related.status">
           <div class="card-header">
             {{ related.name }}
           </div>
@@ -26,7 +26,16 @@
           <div class="card-footer">
             {{ related.status }} | {{ related.species }}
           </div>
-        </div>
+        </div> -->
+        <Character
+          v-if="Object.keys(related).length !== 0"
+          :name="related.name"
+          :species="related.species"
+          :image="related.image"
+          :status="related.status"
+          :origin="related.origin"
+          :location="related.location"
+        />
       </div>
     </div>
   </div>
@@ -34,10 +43,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Character from '@/components/Character.vue';
 
 export default defineComponent({
   props: {
     relateds: Array,
+  },
+  components: {
+    Character,
   },
 });
 </script>
@@ -47,40 +60,5 @@ export default defineComponent({
   margin-top: 5%;
   margin-bottom: 5%;
   background-color: var(--dark-green);
-}
-#related {
-  background-color: var(--grey-color);
-}
-.card {
-  margin-bottom: 2%;
-  border-radius: 2%;
-  color: white;
-  background-color: var(--dark-color);
-}
-
-.Alive {
-  border: green 5px solid;
-}
-
-.Dead {
-  border: red 5px solid;
-}
-
-img {
-  width: 100%;
-  border-radius: 50%;
-}
-.card-header {
-  border-bottom: white 2px solid;
-}
-.card-footer {
-  border-top: white 2px solid;
-}
-
-/* 668px */
-@media (max-width: 43em) {
-  .card {
-    width: 15rem;
-  }
 }
 </style>
