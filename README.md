@@ -16,5 +16,7 @@ npm run serve
 ```
 
 ### Technologies
-App built using Vue 3 | Typescript | fetch API | Bootstrap | CSS | HTML | RestApi from https://rickandmortyapi.com/
+App built using Vue 3 | Typescript | Fetch API | Bootstrap | CSS | HTML | RestApi from https://rickandmortyapi.com/
+
+Tested with Postman
 
