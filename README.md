@@ -2,12 +2,16 @@
 
 ## Project setup
 ```
-npm install
+To run the application, you need to install the dependencies by running the following command:
+
+<i>npm install</i> <br/>
+
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+In the project directory, you can run:
+<i>npm run serve</i>
 ```
 
 ### Compiles and minifies for production
