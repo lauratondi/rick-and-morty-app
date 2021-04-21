@@ -24,6 +24,7 @@
       </div>
     </div>
   </div>
+  <!-- /cards container -->
   <nav>
     <ul class="pagination">
       <li class="page-item">

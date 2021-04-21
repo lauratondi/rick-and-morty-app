@@ -70,8 +70,8 @@ export default defineComponent({
 
 <style scoped>
 .cards {
-  margin-top: 15%;
   width: 100%;
+  margin-top: 15%;
   overflow: hidden;
 }
 

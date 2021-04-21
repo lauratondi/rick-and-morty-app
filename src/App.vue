@@ -36,10 +36,10 @@ export default {
   padding: 0;
 }
 body {
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden !important;
   width: 100vw;
   height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden !important;
 }
 
 p {

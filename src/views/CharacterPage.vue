@@ -10,7 +10,7 @@
       :origin="character.origin"
       :location="character.location"
     />
-    <RelatedCharacters :relatedCharacters="character.name" />
+    <RelatedPage :relatedPage="character.name" />
     <router-link to="/characters"
       ><button class="btn">Back to Characters</button></router-link
     >
@@ -21,12 +21,12 @@
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import Character from '@/components/Character.vue';
-import RelatedCharacters from '@/components/RelatedCharacters.vue';
+import RelatedPage from '@/components/RelatedPage.vue';
 
 export default defineComponent({
   components: {
     Character,
-    RelatedCharacters,
+    RelatedPage,
   },
 
   setup() {
