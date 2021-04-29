@@ -3,10 +3,10 @@
     <div class="info">
       <p>
         <a
-          href="https://www.en.d-tt.nl/"
+          href="https://www.lauratondi.net/"
           target="_blank"
           rel="noopener noreferrer"
-          >2021 &copy; DDT</a
+          >2021 &copy; Laura Tondi</a
         >
       </p>
     </div>

@@ -26,7 +26,7 @@ import RelatedPage from '@/components/RelatedPage.vue';
 export default defineComponent({
   components: {
     Character,
-    RelatedPage,
+    // RelatedPage,
   },
 
   setup() {
